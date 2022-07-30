@@ -145,11 +145,14 @@ class XcodebuildParameters {
 	File getOutputPath() {
 		if (type == Type.iOS) {
 			if (simulator) {
+				logger.info("XcodebuildParameters.getOutputPath(): ${getSymRoot()}/${configuration}-iphonesimulator")
 				return new File(getSymRoot(), "${configuration}-iphonesimulator")
 			} else {
+				logger.info("XcodebuildParameters.getOutputPath(): ${getSymRoot()}/${configuration}-iphoneos")
 				return new File(getSymRoot(), "${configuration}-iphoneos")
 			}
 		}
+		logger.info("XcodebuildParameters.getOutputPath(): ${configuration}")
 		return new File(getSymRoot(), configuration)
 	}
 

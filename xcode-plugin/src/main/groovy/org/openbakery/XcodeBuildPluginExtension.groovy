@@ -324,6 +324,7 @@ class XcodeBuildPluginExtension {
 				path += "-iphoneos"
 			}
 		}
+		logger.info("XcodeBuildPluginExtension.getOutputPath(): ${getSymRoot()}/${path}")
 		return new File(getSymRoot(), path)
 	}
 
