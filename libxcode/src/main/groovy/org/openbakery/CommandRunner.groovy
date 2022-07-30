@@ -77,6 +77,7 @@ class CommandRunner {
 		}
 
 		def commandsAsStrings = commandList.collect { it.toString() } // GStrings don't play well with ProcessBuilder
+		logger.info(commandsAsStrings.join(" "))
 		def processBuilder = new ProcessBuilder(commandsAsStrings)
 		processBuilder.redirectErrorStream(true)
 		processBuilder.directory(new File(directory))
